@@ -17,9 +17,7 @@ class NotesHandler {
   async postNoteHandler(request, h) {
     try {
       this._validator.validateNotePayload(request.payload);
-
       const { title = "untitled", body, tags } = request.payload;
-
       const { id: credentialId } = request.auth.credentials;
 
       const noteId = await this._service.addNote({

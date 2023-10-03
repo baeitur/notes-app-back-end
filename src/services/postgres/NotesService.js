@@ -15,6 +15,7 @@ class NotesService {
     const id = nanoid(16);
     const createdAt = new Date().toISOString();
     const updatedAt = createdAt;
+    //console.log(...arguments);
 
     const query = {
       text: "INSERT INTO notes VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING id",
